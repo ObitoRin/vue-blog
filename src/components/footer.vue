@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>多人共享博客</p>
+        <p>&copy;&nbsp;Kai Xian</p>
     </footer>
 </template>
 <style scoped>
