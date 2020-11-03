@@ -6,7 +6,7 @@ set -e
 npm run build
 
 # 进入目标文件夹
-# serve -s dist
+cd dist
 
 # 提交到本地仓库
 
@@ -14,6 +14,6 @@ git init
 git add -A
 git commit -m '提交'
 
-git push -f git@github.com:ObitoRin/vue-blog.github.io.git master
+git push -f git@github.com:ObitoRin/vue-blog.git master
 
 cd -

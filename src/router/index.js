@@ -1,53 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '../store'
-/*import Index from '../views/Index/template.vue'
-import Create from '../views/Create/template.vue'
-import Detail from '../views/Detail/template.vue'
-import Edit from '../views/Edit/template.vue'
-import Login from '../views/Login/template.vue'
-import Register from '../views/Register/template.vue'
-import User from '../views/User/template.vue'
-import My from '../views/My/template.vue'*/
-
 
 Vue.use(VueRouter)
-
-/*const router =  new VueRouter({
-  routes: [{
-      path: '/',
-      component: Index
-    },
-    {
-      path: '/login',
-      component: Login
-    },
-    {
-      path: '/register',
-      component: Register
-    },
-    {
-      path: '/create',
-      component: Create
-    },
-    {
-      path: '/my',
-      component: My
-    },
-    {
-      path: '/detail/:blogId',
-      component: Detail
-    },
-    {
-      path: '/edit/:blogId',
-      component: Edit
-    },
-    {
-      path: '/user/:blogId',
-      component: User
-    }
-  ]
-})*/
 
 //懒加载
 const router =  new VueRouter({
@@ -105,7 +60,7 @@ router.beforeEach((to, from, next) => {
       }    
     })
   } else {
-    next() // 确保一定要调用 next()
+    next()
   }
 })
 

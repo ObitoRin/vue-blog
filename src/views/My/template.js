@@ -48,10 +48,15 @@ export default {
             //点击确定执行以下操作
             await blog.deleteBlog( {blogId })
             //弹框删除成功
-            this.$message({type: 'success',message: '删除成功!'})                     
+            this.$message({type: 'success',message: '删除成功!'})
             //删除成功后直接消失：遍历博客数据列表，返回数据列表中id不是被删除id的数据
-            this.blogs = this.blogs.filter(blog => blog.id != blogId)   
-
+            //this.blogs = this.blogs.filter(blog => blog.id != blogId) 
+            //删除成功后再获取博客数据
+            let res = await blog.getBlogsByUserId(this.user.id, {page: this.page})           
+            this.blogs = res.data
+            this.page = res.page
+            this.total = res.total
+            
              /*this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
@@ -62,9 +67,9 @@ export default {
                     this.$message({type: 'success',message: '删除成功!'})                     
     
                     //删除成功后直接消失：遍历博客数据列表，返回数据列表中id不是被删除id的数据
-                    this.blog = this.blogs.filter(blog => blog.id != blogId)
+                    this.blog = this.blogs.filter(blog => blog.id != blogId)                   
                 })               
-              })*/                                                                
+              }) */
         },
 
         //转换时间格式
